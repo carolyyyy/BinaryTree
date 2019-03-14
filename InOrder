@@ -1,3 +1,4 @@
+//递归中序遍历
 template<class T>
 void BinaryTree<T>:: InOrder (BinaryTreeNode<T> *root)  {  	  
 // 中序遍历二叉树或其子树
