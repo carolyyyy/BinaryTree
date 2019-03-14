@@ -1,0 +1,20 @@
+//非递归前序遍历（栈）
+template<class T>
+void PreOrderWithoutRecursion(BinaryTreeNode<T> *root)  {
+    using std::stack;        // 使用STL中的栈
+    stack<BinaryTreeNode<T>* > aStack;
+    BinaryTreeNode<T> *pointer = root;
+    aStack.push(pointer); 				
+    while (!aStack.empty() || pointer) {  
+        if（pointer）{ 
+            Visit(pointer->value());    	      // 访问当前结点
+            if (pointer->rightchild() != NULL)        // 非空右孩子入栈
+            aStack.push(pointer->rightchild());
+            pointer=pointer->leftchild () ; 	
+        }
+        else {
+            pointer=aStack.top();                    // 获得栈顶元素
+            aStack.pop();  		       // 栈顶元素退栈
+        }
+    }
+}
