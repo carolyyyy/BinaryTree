@@ -1,0 +1,11 @@
+//递归实现前序遍历
+template<class T>
+void PreOrder (BinaryTreeNode<T> *root)  {  	  
+     // 前序遍历二叉树或其子树
+	
+    if (root != NULL) {
+        Visit(root->value());		            // 访问当前结点
+        PreOrder(root->leftchild());	            // 前序遍历左子树
+        PreOrder(root->rightchild());	// 前序遍历右子树
+    }
+}
