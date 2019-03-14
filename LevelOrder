@@ -1,0 +1,18 @@
+//广度遍历（队列）
+template<class T>
+void LevelOrder (BinaryTreeNode<T> *root)	{
+	using std::queue;	   	                  // 使用STL的队列
+	queue<BinaryTreeNode<T>*> aQueue;
+	BinaryTreeNode<T> *pointer = root;
+	if (pointer)
+		aQueue.push(pointer);                          // 根结点入队列
+	while(!aQueue.empty()) {                                         // 队列非空
+		pointer = aQueue.front();                     // 获得队列首结点
+		aQueue.pop();                          	   // 当前结点出队列
+ 	  Visit(pointer->value());		         // 访问当前结点
+		if (pointer->leftchild() != NULL)
+			aQueue.push(pointer->leftchild());	  // 左子树进队列
+		if (pointer->rightchild()!= NULL)
+			aQueue.push(pointer->rightchild());  // 右子树进队列
+	}
+}
