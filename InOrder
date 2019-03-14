@@ -1,0 +1,10 @@
+template<class T>
+void BinaryTree<T>:: InOrder (BinaryTreeNode<T> *root)  {  	  
+// 中序遍历二叉树或其子树
+	
+    if (root != NULL) {
+        InOrder (root->leftchild());	// 中序周游左子树
+        Visit(root->value());	           // 访问当前结点
+        InOrder(root->rightchild()); // 中序周游右子树
+    }
+}
