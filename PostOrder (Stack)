@@ -1,0 +1,19 @@
+//非递归后序遍历（栈）
+template <class T>
+void PreOrderTranverse(BinaryTreeNode<T> *t) {
+	Stack<BinaryTreeNode<T>*>  s;
+	BinaryTreeNode<T> *p = t,*q = t;
+	while(p != 0){
+		for(;p->leftchild() != 0;p = p->leftchild())
+        s.push(p);
+		while(p != 0 && (p->rightchild() == 0 || p->rightchild() == q)){
+        visit(p->value());
+        q = p;
+        if(s.empty())     
+            return;
+        s.Delete(p);//相当于p=s.top(); s.pop();
+	  }
+		s.push(p);
+		p = p->rightchild();
+  } 
+}
