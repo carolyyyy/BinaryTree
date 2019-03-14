@@ -9,7 +9,7 @@ void LevelOrder (BinaryTreeNode<T> *root)	{
 	while(!aQueue.empty()) {                                         // 队列非空
 		pointer = aQueue.front();                     // 获得队列首结点
 		aQueue.pop();                          	   // 当前结点出队列
- 	  Visit(pointer->value());		         // 访问当前结点
+ 	        Visit(pointer->value());		         // 访问当前结点
 		if (pointer->leftchild() != NULL)
 			aQueue.push(pointer->leftchild());	  // 左子树进队列
 		if (pointer->rightchild()!= NULL)
