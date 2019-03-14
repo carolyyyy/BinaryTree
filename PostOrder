@@ -1,0 +1,10 @@
+//递归后序遍历
+template<class T>
+void BinaryTree<T>:: PostOrder (BinaryTreeNode<T> *root)  { 	  
+           // 后序遍历二叉树或其子树
+	if (root != NULL) {
+	      PostOrder(root->leftchild());	// 后序遍历左子树
+	      PostOrder (root->rightchild());	// 后序遍历右子树
+	      Visit(root->value());	            // 访问当前结点
+  }
+}
